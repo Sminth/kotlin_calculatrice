@@ -185,7 +185,7 @@ class MainActivity : AppCompatActivity() {
         } else if (previousNumber.isNotEmpty()) {
             if(previousNumber.toIntOrNull()!=null) previousNumber = previousNumber.toInt().times(-1).toString()
             else if (previousNumber.toDoubleOrNull()!=null) previousNumber = previousNumber.toDouble().times(-1).toString()
-            else previousNumber = previousNumber.toIntOrNull().times(-1).toString()
+            else previousNumber = previousNumber.toInt().times(-1).toString()
 
 
             result.text = previousNumber
