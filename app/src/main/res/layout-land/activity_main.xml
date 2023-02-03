@@ -47,15 +47,10 @@
             android:text="+/-" />
 
         <Button
-            android:id="@+id/equal2"
-
-
-            style="@style/buttoncp"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:onClick="copyAction"
-            android:text="Cp"
-            android:textSize="30sp" />
+            android:id="@+id/point"
+            android:textColor="@color/red"
+            style="@style/buttonNumber"
+            android:text="." />
         <Button
             android:id="@+id/divide"
 

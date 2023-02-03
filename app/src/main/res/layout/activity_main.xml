@@ -35,16 +35,16 @@
     <LinearLayout
         style="@style/buttonRow">
 
-        <Button
-            android:id="@+id/equal2"
+<!--        <Button-->
+<!--            android:id="@+id/equal2"-->
 
 
-            style="@style/buttoncp"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:onClick="copyAction"
-            android:text="Cp"
-            android:textSize="30sp" />
+<!--            style="@style/buttoncp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@color/white"-->
+<!--            android:onClick="copyAction"-->
+<!--            android:text="Cp"-->
+<!--            android:textSize="30sp" />-->
 
         <Button
 
@@ -59,7 +59,10 @@
             android:textColor="@color/red"
 
             android:text="⌫"/>
-
+        <Button
+            android:id="@+id/negate"
+            style="@style/buttonNumber"
+            android:text="+/-" />
         <Button
             android:id="@+id/divide"
 
@@ -154,10 +157,7 @@
             style="@style/buttonNumber"
             android:text="0" />
 
-        <Button
-            android:id="@+id/negate"
-            style="@style/buttonNumber"
-            android:text="+/-" />
+
 
         <Button
             android:id="@+id/modulo"
