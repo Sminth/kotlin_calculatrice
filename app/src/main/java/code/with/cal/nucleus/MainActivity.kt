@@ -172,7 +172,9 @@ class MainActivity : AppCompatActivity() {
         print(currentNumber)
         print(previousNumber)
         if (currentNumber.isNotEmpty()) {
-            currentNumber = currentNumber.toDouble().times(-1).toString()
+            if(currentNumber.toInOrNull()!=null) currentNumber = currentNumber.toInt().times(-1).toString()
+            else if (currentNumber.toDoubleOrNull()!=null) currentNumber = currentNumber.toDouble().times(-1).toString()
+            else currentNumber = currentNumber.toInt().times(-1).toString()
             if (previousNumber.isNotEmpty()) {
                 result.text = previousNumber+currentOperator+ currentNumber
 
@@ -181,7 +183,11 @@ class MainActivity : AppCompatActivity() {
                 result.text = currentNumber
             }
         } else if (previousNumber.isNotEmpty()) {
-            previousNumber = previousNumber.toDouble().times(-1).toString()
+            if(previousNumber.toInOrNull()!=null) previousNumber = previousNumber.toInt().times(-1).toString()
+            else if (previousNumber.toDoubleOrNull()!=null) previousNumber = previousNumber.toDouble().times(-1).toString()
+            else previousNumber = previousNumber.toIntDouble().times(-1).toString()
+
+
             result.text = previousNumber
         }
     }
