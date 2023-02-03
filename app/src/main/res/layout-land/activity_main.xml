@@ -47,10 +47,12 @@
             android:text="+/-" />
 
         <Button
+
             android:id="@+id/point"
             android:textColor="@color/red"
             style="@style/buttonNumber"
             android:text="." />
+
         <Button
             android:id="@+id/divide"
 

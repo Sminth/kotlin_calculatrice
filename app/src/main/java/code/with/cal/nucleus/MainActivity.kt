@@ -1,5 +1,6 @@
 //package com.example.myapplication
 package code.with.cal.nucleus
+
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -44,9 +45,11 @@ class MainActivity : AppCompatActivity() {
         result.setTextIsSelectable(true)
         result.setOnLongClickListener(OnLongClickListener {
             val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+
             val clip = ClipData.newPlainText("Texte Copié", result.getText())
             clipboard.setPrimaryClip(clip)
             Toast.makeText(applicationContext, "texte bien copié !", Toast.LENGTH_SHORT)
+
                 .show()
             true
         })
@@ -148,7 +151,9 @@ class MainActivity : AppCompatActivity() {
         print(currentNumber)
         print(currentOperator)
 //        print(result)
+
         if (currentOperator!=""){
+
 //            val resultCalcul =calc()
 //            result.text = resultCalcul.toString()
 //            currentNumber = resultCalcul.toString()
@@ -216,6 +221,7 @@ class MainActivity : AppCompatActivity() {
                     reset() // On retire le signe "-" et le chiffre
                     return
                 }
+
                 else if(text.length > 2 && text[text.length - 2] == '-' && text[text.length - 1].isDigit()){
                     result.text = text.substring(0, text.length - 2)
                     currentNumber = currentNumber.substring(0, currentNumber.length - 1)
@@ -224,17 +230,18 @@ class MainActivity : AppCompatActivity() {
 
 
                 }
+
                 else {
                     if (currentNumber.length == 0) {
                         currentNumber = "0"
                         isOperatorClicked = false
                     }
                     else  currentNumber = currentNumber.substring(0, currentNumber.length - 1)
-                }
+
             }
         }
     }
-
+    }
 
     private fun reset() {
         result.text = ""
