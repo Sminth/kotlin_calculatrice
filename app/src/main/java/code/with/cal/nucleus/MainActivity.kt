@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
         print(currentNumber)
         print(previousNumber)
         if (currentNumber.isNotEmpty()) {
-            if(currentNumber.toInOrNull()!=null) currentNumber = currentNumber.toInt().times(-1).toString()
+            if(currentNumber.toIntOrNull()!=null) currentNumber = currentNumber.toInt().times(-1).toString()
             else if (currentNumber.toDoubleOrNull()!=null) currentNumber = currentNumber.toDouble().times(-1).toString()
             else currentNumber = currentNumber.toInt().times(-1).toString()
             if (previousNumber.isNotEmpty()) {
@@ -183,9 +183,9 @@ class MainActivity : AppCompatActivity() {
                 result.text = currentNumber
             }
         } else if (previousNumber.isNotEmpty()) {
-            if(previousNumber.toInOrNull()!=null) previousNumber = previousNumber.toInt().times(-1).toString()
+            if(previousNumber.toIntOrNull()!=null) previousNumber = previousNumber.toInt().times(-1).toString()
             else if (previousNumber.toDoubleOrNull()!=null) previousNumber = previousNumber.toDouble().times(-1).toString()
-            else previousNumber = previousNumber.toIntDouble().times(-1).toString()
+            else previousNumber = previousNumber.toIntOrNull().times(-1).toString()
 
 
             result.text = previousNumber
