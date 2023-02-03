@@ -25,16 +25,6 @@ class MainActivity : AppCompatActivity() {
     private var isEqualClicked = false
 
 
-//    override fun onConfigurationChanged(newConfig: Configuration) {
-//        super.onConfigurationChanged(newConfig)
-//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            setContentView(R.layout.activity_main_land)
-//        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-//            setContentView(R.layout.activity_main)
-//        }
-//    }
-
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -154,11 +144,7 @@ class MainActivity : AppCompatActivity() {
 
         if (currentOperator!=""){
 
-//            val resultCalcul =calc()
-//            result.text = resultCalcul.toString()
-//            currentNumber = resultCalcul.toString()
             calculate()
-//            currentNumber
         }
         if (currentNumber.isNotEmpty()) {
             previousNumber = currentNumber
@@ -229,14 +215,6 @@ class MainActivity : AppCompatActivity() {
             }
             "/" -> {
 
-//                try {
-//                    previousNumber.toInt() / currentNumber.toInt()
-//                } catch (e: java.lang.NumberFormatException) {
-//                if(previousNumber.toIntOrNull()!=null && currentNumber.toIntOrNull()!=null){
-//                    previousNumber / currentNumber
-//                } else {
-//                    previousNumber.toDouble() / currentNumber.toDouble()
-//                }
                 val prev = previousNumber.toDouble()
                 val curr = currentNumber.toDouble()
                 val result = prev / curr
