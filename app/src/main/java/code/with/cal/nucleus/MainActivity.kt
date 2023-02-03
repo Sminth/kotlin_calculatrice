@@ -203,6 +203,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun calc(): Double {
+        if(currentNumber.toIntOrNull()!=null){
+            previousNumber.toInt()
+            currentNumber.toInt()
+        }
+
+        if(currentNumber.toDoubleOrNull()!=null) {
+            previousNumber.toDouble()
+            currentNumber.toDouble()
+        }
         return when (currentOperator) {
             "+" -> previousNumber.toDouble() + currentNumber.toDouble()
             "-" -> previousNumber.toDouble() - currentNumber.toDouble()
