@@ -202,23 +202,59 @@ class MainActivity : AppCompatActivity() {
             currentOperator = ""
         }
     }
-    private fun calc(): Double {
-        if(currentNumber.toIntOrNull()!=null){
-            previousNumber.toInt()
-            currentNumber.toInt()
-        }
+    private fun calc(): Any {
 
-        if(currentNumber.toDoubleOrNull()!=null) {
-            previousNumber.toDouble()
-            currentNumber.toDouble()
-        }
         return when (currentOperator) {
-            "+" -> previousNumber.toDouble() + currentNumber.toDouble()
-            "-" -> previousNumber.toDouble() - currentNumber.toDouble()
-            "*" -> previousNumber.toDouble() * currentNumber.toDouble()
-            "/" -> previousNumber.toDouble() / currentNumber.toDouble()
-            "%" -> previousNumber.toDouble() % currentNumber.toDouble()
-            else -> 0.0
+            "+" -> {
+                try {
+                    previousNumber.toInt() + currentNumber.toInt()
+                }
+               catch (e:java.lang.NumberFormatException){
+                   previousNumber.toDouble() + currentNumber.toDouble()
+               }
+            }
+            "-" -> {
+                try {
+                    previousNumber.toInt() - currentNumber.toInt()
+                } catch (e: java.lang.NumberFormatException) {
+                    previousNumber.toDouble() - currentNumber.toDouble()
+                }
+            }
+            "*" -> {
+                try {
+                    previousNumber.toInt() * currentNumber.toInt()
+                } catch (e: java.lang.NumberFormatException) {
+                    previousNumber.toDouble() * currentNumber.toDouble()
+                }
+            }
+            "/" -> {
+
+//                try {
+//                    previousNumber.toInt() / currentNumber.toInt()
+//                } catch (e: java.lang.NumberFormatException) {
+//                if(previousNumber.toIntOrNull()!=null && currentNumber.toIntOrNull()!=null){
+//                    previousNumber / currentNumber
+//                } else {
+//                    previousNumber.toDouble() / currentNumber.toDouble()
+//                }
+                val prev = previousNumber.toDouble()
+                val curr = currentNumber.toDouble()
+                val result = prev / curr
+                 if (result == result.toInt().toDouble()) {
+                    result.toInt()
+                } else {
+                    result
+                }
+//                }
+            }
+            "%" ->{
+                try {
+                    previousNumber.toInt() % currentNumber.toInt()
+                } catch (e: java.lang.NumberFormatException) {
+                    previousNumber.toDouble() % currentNumber.toDouble()
+                }
+            }
+            else -> 0
         }
     }
 
